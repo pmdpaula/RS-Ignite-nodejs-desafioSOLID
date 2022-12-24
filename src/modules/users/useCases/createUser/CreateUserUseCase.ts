@@ -17,7 +17,7 @@ class CreateUserUseCase {
     }
 
     const user = this.usersRepository.create({ name, email });
-    console.log("🚀 ~ file: CreateUserUseCase.ts:20 ~ CreateUserUseCase ~ execute ~ user", user);
+    // console.log("🚀 ~ file: CreateUserUseCase.ts:20 ~ CreateUserUseCase ~ execute ~ user", user);
 
     return user;
   }

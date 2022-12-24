@@ -10,6 +10,10 @@ class ShowUserProfileController {
 
     const user = this.showUserProfileUseCase.execute({ user_id });
 
+    if (!user) {
+      return response.status(404).json({ error: "Unauthorized" });
+    }
+
     return response.json(user);
   }
 }

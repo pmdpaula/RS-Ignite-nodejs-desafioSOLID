@@ -21,7 +21,7 @@ class TurnUserAdminUseCase {
       updated_at: new Date(),
     };
 
-    this.usersRepository.turnAdmin(updatedUser);
+    this.usersRepository.turnAdmin(user);
 
     return updatedUser;
   }

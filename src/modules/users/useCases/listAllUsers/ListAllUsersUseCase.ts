@@ -9,12 +9,10 @@ class ListAllUsersUseCase {
   constructor(private usersRepository: IUsersRepository) {}
 
   execute({ user_id }: IRequest): User[] {
-    const user = this.usersRepository.findById(user_id as string);
+    const user = this.usersRepository.findById(user_id);
 
-    if (!user?.admin && !user) {
-      // throw new Error("Unauthorized");
-      // return response.status(400).json({ error: "Unauthorized" });
-      return null;
+    if (!user?.admin || !user) {
+      throw new Error("Unauthorized");
     }
 
     const users = this.usersRepository.list();
