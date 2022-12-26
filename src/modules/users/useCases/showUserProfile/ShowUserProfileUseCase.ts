@@ -15,7 +15,7 @@ class ShowUserProfileUseCase {
       user = this.usersRepository.findByEmail(user_id);
 
       if (!user) {
-        throw new Error("Unauthorized");
+        throw new Error("User not found!");
       }
     }
 
